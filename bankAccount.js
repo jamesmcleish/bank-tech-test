@@ -6,7 +6,9 @@ class BankAccount{
   showBalance = () => {
     return this.balance
   }
-
+  despositMoney = (deposit) => {
+    this.balance = this.balance + deposit
+  }
 }
 
 module.exports = BankAccount;
