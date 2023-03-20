@@ -14,4 +14,9 @@ describe('bankAccount', () => {
     account.withdrawMoney(500);
     expect(account.showBalance()).toBe(-500);
   });
+  it('returns an empty statement when showStatement is called', () => {
+    const account = new BankAccount();
+    expect(account.showStatement()).toBe("date || credit || debit || balance")
+  });
+  
 });

@@ -1,7 +1,7 @@
 class BankAccount{
   constructor(){
     this.balance = 0
-    this.statement = []
+    this.statement = "date || credit || debit || balance"
   }
   showBalance = () => {
     return this.balance
@@ -12,6 +12,9 @@ class BankAccount{
   withdrawMoney = (withdrawal) => {
     this.balance = this.balance - withdrawal
   };
+  showStatement = () => {
+    return this.statement
+  }
 }
 
 module.exports = BankAccount;
