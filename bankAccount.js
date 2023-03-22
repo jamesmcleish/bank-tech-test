@@ -19,8 +19,11 @@ class BankAccount{
     return this.statement
   }
   addToStatement = (amount, type) => {
-    this.statement = this.statement + `\n` + `${Date.now()} || || ${amount}.00 || ${this.balance}.00`;
-  }
-}
+    if (type === 'deposit') {
+      this.statement = this.statement + `\n` + `${Date.now()} || ${amount}.00 || || ${this.balance}.00`;
+    } else {
+      this.statement = this.statement + `\n` + `${Date.now()} || || ${amount}.00 || ${this.balance}.00`;
+    }
+  }}
 
 module.exports = BankAccount;
