@@ -6,14 +6,20 @@ class BankAccount{
   showBalance = () => {
     return this.balance
   };
-  despositMoney = (deposit) => {
-    this.balance = this.balance + deposit
+  despositMoney = (depositAmount) => {
+    this.balance = this.balance + depositAmount
+    this.addToStatement(depositAmount, 'deposit')
   };
-  withdrawMoney = (withdrawal) => {
-    this.balance = this.balance - withdrawal
+  withdrawMoney = (withdrawalAmount) => {
+    this.balance = this.balance - withdrawalAmount
+    this.addToStatement(withdrawalAmount, 'withdrawal')
+
   };
   showStatement = () => {
     return this.statement
+  }
+  addToStatement = (amount, type) => {
+    this.statement = this.statement + `\n` + `${Date.now()} || || ${amount}.00 || ${this.balance}.00`;
   }
 }
 

@@ -18,5 +18,11 @@ describe('bankAccount', () => {
     const account = new BankAccount();
     expect(account.showStatement()).toBe("date || credit || debit || balance")
   });
-  
+  it('returns a statement with one deposit listed', () => {
+    const account = new BankAccount();
+    account.despositMoney(1000);
+    let date = Date.now();
+    expect(account.showStatement()).toBe(`date || credit || debit || balance
+${date} || || 1000.00 || 1000.00`)
+  });
 });
