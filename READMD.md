@@ -34,3 +34,18 @@ statement = []
 functions: depositMoney, withdrawMoney, showStatement, showBalance, addToStatement
 
 ## Getting Started
+
+# Setup our environment to use node latest version
+$ nvm use node
+$ npm init -y
+
+# Add the jest package to our project
+# (this will update package.json and package-lock.json)
+$ npm add jest
+
+# Also install jest "globally"
+# (this is so we can run the `jest` command)
+$ npm install -g jest
+
+# Run our tests
+$ jest
